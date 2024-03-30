@@ -10,11 +10,9 @@ while True:
         google_shit()
     elif (n==2):
         do_terminal_shit()
-    elif n==3:
-        display()
-    elif n == 4:
+    elif n == 3:
         send_mail()
-    elif n == 5:
+    elif n == 4:
         send_whatsapp_message()
 
 
