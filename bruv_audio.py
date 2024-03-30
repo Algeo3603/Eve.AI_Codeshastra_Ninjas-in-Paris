@@ -11,7 +11,7 @@ import speech_recognition as sr
 import wave
 
 load_dotenv()
-# load_dotenv(find_dotenv())
+
 OPENAI_API_KEY=os.getenv('OPENAI_API_KEY')
 GEMINI_API = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=GEMINI_API)
@@ -84,6 +84,7 @@ def record_audio():
     stream.close()
 
     audio_data = b''.join(audio_frames)
+    print("itd fomr")
     return audio_data
 
 def save_as_mp3(audio_data, filename):
@@ -124,11 +125,12 @@ def save_as_mp3(audio_data, filename):
 if __name__ == "__main__":
   
 
-#   while True:
-#     if listen_for_keyword():
-#         audio_data = record_audio()
-#         mp3_filename = "output1.mp3"
-#         save_as_mp3(audio_data, mp3_filename)
+  while True:
+    if listen_for_keyword():
+        audio_data = record_audio()
+        mp3_filename = "output1.mp3"
+        save_as_mp3(audio_data, mp3_filename)
+        break
         
 
 #   mp3_filename = "output.mp3"
@@ -136,6 +138,6 @@ if __name__ == "__main__":
 #   save_as_mp3(audio_data, mp3_filename)
 
   
-  text=input("Enter query bruv : ")
-  answer=process_text(text)
-  speak(answer)
+#   text=input("Enter query bruv : ")
+#   answer=process_text(text)
+#   speak(answer)
