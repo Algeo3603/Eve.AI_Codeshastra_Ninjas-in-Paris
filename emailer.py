@@ -8,6 +8,7 @@ email_password = os.getenv('email_password')
 
 
 def send_mail():
+    # to_addrs and msg have to be changed as required
     try:
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
